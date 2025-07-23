@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" text="Regresar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sobre Nosotros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding custom-content">
+  <!-- Imagen con descripción -->
+  <div class="image-section">
+    
+  </div>
+
+  <!-- Texto informativo -->
+  <section class="info-section">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      Esta aplicación fue desarrollada para ayudar con cálculos de construcción.
+      Su objetivo es facilitar la estimación de materiales como block, cemento y arena
+      para la realización de un muro y un piso liso.
+    </p>
+  </section>
+
+  <!-- Misión -->
+  <section class="info-section">
+    <h2>Misión</h2>
+    <p>
+      Brindar una herramienta sencilla, precisa y accesible que permita a usuarios, constructores y estudiantes
+      estimar con eficiencia la cantidad de materiales necesarios para la construcción de pisos y muros,
+      optimizando recursos y tiempo en sus proyectos.
+    </p>
+  </section>
+
+  <!-- Visión -->
+  <section class="info-section">
+    <h2>Visión</h2>
+    <p>
+      Ser una aplicación web de referencia a nivel nacional en el área de cálculo de materiales para la construcción,
+      promoviendo el uso de la tecnología en procesos constructivos y apoyando tanto a profesionales como a personas autodidactas en sus obras.
+    </p>
+  </section>
+</ion-content>
+
+<style>
+  .custom-content {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+
+  .image-section {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .profile-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .profile-image:hover {
+    transform: scale(1.05);
+  }
+
+  .image-description {
+    font-weight: 500;
+    margin-top: 14px;
+    color: #666;
+    padding: 0 16px;
+  }
+
+  .info-section {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .info-section h2 {
+    color: #1e88e5;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+  }
+
+  .info-section p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+</style>

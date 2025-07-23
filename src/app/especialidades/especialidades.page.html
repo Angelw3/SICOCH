@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Especialidad civil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" size-md="6" style="text-align: center;">
+        <ion-card>
+          <ion-img src="/assets/piso.jpeg" style="height: 200px; object-fit: cover;"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Piso de Concreto Pulido</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" routerLink="/piso" color="primary">Ir a la calculadora del Piso de concreto</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="6" style="text-align: center;">
+        <ion-card>
+          <ion-img src="/assets/muro2.jpeg" style="height: 200px; object-fit: cover;"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Levantamiento de Muro</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" routerLink="/muro" color="primary">Ir a la calculadora del Muro</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Botón para regresar al inicio -->
+  <div style="margin: 20px;">
+    <ion-button expand="block" color="medium" routerLink="/inicio">
+      Regresar al inicio
+    </ion-button>
+  </div>
+</ion-content>

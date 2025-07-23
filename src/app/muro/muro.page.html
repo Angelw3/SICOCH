@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Calculadora de Barda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" style="--background: #f0f2f5;">
+  <!-- Imagen destacada con sombra y efecto -->
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 8px;
+      overflow: hidden;
+    "
+  >
+    <img
+      src="assets/muro.jpg"
+      alt="Imagen de la barda"
+      style="
+        max-width: 100%;
+        height: auto;
+        border-radius: 18px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        max-height: 240px;
+        object-fit: cover;
+      "
+      onmouseover="this.style.transform='scale(1.05)'"
+      onmouseout="this.style.transform='scale(1)'"
+    />
+  </div>
+
+  <!-- Bloque dinámico explicativo -->
+  <ion-card
+    style="
+      margin: 0 20px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, #5a1fc8, #0d6efd);
+      color: white;
+      font-weight: 600;
+      font-size: 17px;
+      text-align: center;
+      padding: 20px 16px;
+      animation: fadeInUp 0.8s ease forwards;
+    "
+  >
+    En este apartado se calcula el material para la construcción de un muro, proporcionando los datos de los materiales.
+  </ion-card>
+
+  <!-- Formulario -->
+  <div style="padding: 0 20px;">
+    <ion-item
+      lines="inset"
+      class="ion-margin-bottom"
+      style="
+        border-radius: 14px;
+        background: white;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+      "
+    >
+      <ion-label position="floating" style="color: #333; font-weight: 500;">
+        Largo de la barda (m)
+      </ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="largo"
+        inputmode="decimal"
+        min="0"
+        style="font-size: 16px;"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item
+      lines="inset"
+      class="ion-margin-bottom"
+      style="
+        border-radius: 14px;
+        background: white;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+      "
+    >
+      <ion-label position="floating" style="color: #333; font-weight: 500;">
+        Altura de la barda (m)
+      </ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="alto"
+        inputmode="decimal"
+        min="0"
+        style="font-size: 16px;"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      class="ion-margin-top"
+      color="primary"
+      style="font-weight: 600; font-size: 17px;"
+      (click)="calcular()"
+    >
+      Calcular
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      class="ion-margin-top"
+      color="medium"
+      style="font-weight: 600; font-size: 17px;"
+      (click)="regresar()"
+    >
+      Regresar
+    </ion-button>
+  </div>
+
+  <!-- Resultados -->
+  <ion-card
+    *ngIf="resultado"
+    class="ion-margin-top"
+    style="
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      margin: 28px 20px 40px;
+      background: white;
+      color: #222;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 16px 20px;
+    "
+  >
+    <ion-card-header>
+      <ion-card-title
+        style="text-align: center; font-size: 22px; font-weight: 700; color: #0d6efd;"
+      >
+        Resultado
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Área: <strong>{{ formatNumber(resultado?.area, 2) }}</strong> m²</p>
+      <p>Blocks necesarios: <strong>{{ formatNumber(resultado?.blocks, 0) }}</strong></p>
+      <p>Bultos para pegar block: <strong>{{ formatNumber(resultado?.bultosPegado, 1) }}</strong></p>
+      <p>Bultos para repellar: <strong>{{ formatNumber(resultado?.bultosRepello, 1) }}</strong></p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Espaciado inferior para móviles -->
+  <div style="height: 90px;"></div>
+
+  <style>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</ion-content>
